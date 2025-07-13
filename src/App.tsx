@@ -3,6 +3,8 @@ import HelloShaker from "./componetns/HelloShaker.tsx";
 import Status from "./componetns/Status.tsx";
 import Hedar from "./componetns/Hedar.tsx";
 import Layout from "./componetns/Layout.tsx";
+import Botton from "./componetns/Botton.tsx";
+import Inpot from "./componetns/Inpot.tsx";
 
 function App() {
     const OpjDate={
@@ -38,6 +40,8 @@ function App() {
         </Hedar>
         <HelloShaker name="Ahmed" login={false} OpjDate={OpjDate} ScN={OpjDate.ScN} arrDate={arrDate}/>
         <Status status="error"/>
+        <Botton handelClick={(e,id)=>console.log(e.target,id)}/>
+        <Inpot value='' handerlInpot={(event)=>console.log(event.target.value)}/>
         </Layout>
 
     </>
