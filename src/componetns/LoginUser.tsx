@@ -1,21 +1,25 @@
-import {useState} from "react";
+import {useContext} from "react";
+import {UserContect} from "../context/UserContect.tsx";
 
-const LoginUser = () => {
-    const [isLogin,setLogin] = useState<boolean>(false);
+function LoginUser ()  {
+    const UserContext=useContext(UserContect);
     const handelLogin=()=>{
-        setLogin(true)
+        UserContext?.setUser({name: "John Doe", email: "s@gmail"});
+
     };
     const handelLogout =()=>{
-
-        setLogin(false)
+        UserContext?.setUser(null);
     }
+
     return (
         <div>
-            <button onClick={handelLogin}>Login</button>
-            <button onClick={handelLogout}>Logout</button>
-            <h2>User {isLogin? "is Login ": "is logout"}</h2>
+            <button onClick={handelLogin} >Login</button>
+            <button onClick={handelLogout} >Logout </button>
+            <h2>is name {UserContext?.user?.name}</h2>
+            <h3>is email {UserContext?.user?.email}</h3>
         </div>
+
     );
-};
+}
 
 export default LoginUser;
