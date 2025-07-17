@@ -1,4 +1,4 @@
-import type {prodacts} from "../teyps/app.ts";
+ import type {prodacts} from "../teyps/app.ts";
 
 type ProdactProps= {
     prodactData:prodacts[]
