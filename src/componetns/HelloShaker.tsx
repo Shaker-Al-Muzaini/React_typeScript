@@ -1,4 +1,4 @@
-type Props= {
+type Props= { 
     name:string;
     login:boolean;
     ScN:string;
